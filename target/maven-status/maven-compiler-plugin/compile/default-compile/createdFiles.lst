@@ -1,0 +1,11 @@
+dev\m3s\sokologger\Card.class
+dev\m3s\sokologger\Player.class
+dev\m3s\sokologger\Utf8Console.class
+dev\m3s\sokologger\Game.class
+dev\m3s\sokologger\Hand.class
+dev\m3s\sokologger\SokoException.class
+dev\m3s\sokologger\CardComparator.class
+dev\m3s\sokologger\Main.class
+dev\m3s\sokologger\Deck.class
+dev\m3s\sokologger\Suite.class
+dev\m3s\sokologger\Utf8Console$Kernel32.class
