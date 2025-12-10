@@ -48,21 +48,60 @@ public class CardTest {
         assertTrue(e.getMessage().contains("between 1 and 13"));
     }
 
-    // BOUNDARY VALUE TESTS / SOME TESTED ABOVE
+    // BOUNDARY VALUE TESTS / OTHERS TESTED ABOVE ALREADY
 
     @Test
     void testValueAtLowerBoundaryValid() throws SokoException {
-    Card card = new Card(Suite.HEARTS, 1);
-    assertEquals(1, card.getValue());
+        Card card = new Card(Suite.HEARTS, 1);
+        assertEquals(1, card.getValue());
     }
 
     @Test
     void testValueAtUpperBoundaryValid() throws SokoException {
-    Card card = new Card(Suite.CLUBS, 13);
-    assertEquals(13, card.getValue());
+        Card card = new Card(Suite.CLUBS, 13);
+        assertEquals(13, card.getValue());
     }
 
-    // GETTER/SETTER TESTS
+    // GETTER TESTS
 
+    @Test
+    void testGetSuite() throws SokoException {
+        Card card = new Card(Suite.CLUBS, 9);
+        assertEquals(Suite.CLUBS, card.getSuite());
+    }
+
+    @Test
+    void testGetValue() throws SokoException {
+        Card card = new Card(Suite.CLUBS, 3);
+        assertEquals(3, card.getValue());
+    }
+
+    // SETTER TESTS
+
+    @Test
+    void testSetSuite() throws SokoException {
+        Card card = new Card(Suite.HEARTS, 2);
+        card.setSuite(Suite.DIAMONDS);
+        assertEquals(Suite.DIAMONDS, card.getSuite());
+    }
+
+    @Test
+    void testSetValueValid() throws SokoException {
+        Card card = new Card(Suite.HEARTS, 2);
+        card.setValue(10);
+        assertEquals(10, card.getValue());
+    }
+
+    @Test
+    void testSetValueInvalid() throws SokoException {
+        Card card = new Card(Suite.SPADES, 1);
+        var e = assertThrows(SokoException.class, 
+            () -> card.setValue(-62));
+        
+        assertTrue(e.getMessage().contains("between 1 and 13"));
+    }
+
+    // 
     
+
 }
